@@ -16,15 +16,14 @@ namespace SEAssignmentConsole
         private double DeliveryCharge;
         private double TotalAmount;
 
-        public Order(int ordnum, string ordinfo, string ordstatus, DateTime ordcreated, Food items,DateTime ordrdy, DateTime orddel, double delcharge, double totalamt)
+        public Order(int ordnum, string ordinfo, string ordstatus, DateTime ordcreated, Food items, DateTime ordrdy, DateTime orddel, double delcharge, double totalamt)
         {
             this.OrderNumber = ordnum;
             this.OrderInfo = ordinfo;
             this.OrderStatus = ordstatus;
             this.OrderCreated = ordcreated;
             this.OrderItems = items;
-            this.OrderReady = ordrdy;
-            this.OrderDelivery = orddel;
+            this.OrderReady = ordrdy; 
             this.DeliveryCharge = delcharge;
             this.TotalAmount = totalamt;
         }

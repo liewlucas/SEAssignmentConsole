@@ -6,11 +6,11 @@ namespace SEAssignmentConsole
 {
     class Menu
     {
-        private int menuID;
-        private int menusize;
-        private Food Items;
+        private int menuID {get;set;}
+        private int menusize { get; set; }
+        private List<Food> Items { get; set; }
 
-        public Menu (int menuid, int size, Food items)
+        public Menu (int menuid, int size, List<Food> items)
         {
             this.menuID = menuid;
             this.menusize = size;

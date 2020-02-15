@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace SEAssignmentConsole
-{
+{/*
     class Chef : Employee
     {
+        /*
         public Chef(string Name, int ID, string Gender, string ContactNo, DateTime DateJoin, string Status) : base(Name, ID, Gender, ContactNo, DateJoin, Status)
         { }
 
@@ -20,5 +21,6 @@ namespace SEAssignmentConsole
             Console.WriteLine("Exit?");
             Console.ReadLine();
         }
-    }
+
+    }*/
 }
