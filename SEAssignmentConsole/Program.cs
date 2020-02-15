@@ -7,15 +7,8 @@ namespace SEAssignmentConsole
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to HungryEatNow!");
-            Console.WriteLine("Please Choose your role ");
-            Console.WriteLine("1. Customer");
-            Console.WriteLine("2. Employee");
-            Console.Write("Enter the Number of your Role :");
-            var role = Console.ReadLine();
-            
 
-            Food CheeseBurger = new Food(1, "Cheese Burger", "Cheese with Burger", 10.50, 100, "Available" );
+            Food CheeseBurger = new Food(1, "Cheese Burger", "Cheese with Burger", 10.50, 100, "Available");
             Food Pasta = new Food(2, "Aglio Olio", "Garlic Speghetti", 20.10, 100, "Available");
             Food Nuggets = new Food(3, "Nuggets", "Fried Chicken Meat", 5.50, 100, "Available");
 
@@ -27,15 +20,49 @@ namespace SEAssignmentConsole
             };
 
             Menu FoodMenu = new Menu(1, 3, Foodlist);
-            
 
-            if(role == "1")
+            Customer John = new Customer(1, "John", "NewYork, Singapore:", "johntan@gmail.com", "98765432");
+            Customer Mary = new Customer(1, "Mary", "NewYork, Singapore:", "marytan@gmail.com", "98765432");
+            Customer Dandy = new Customer(1, "Dandy", "NewYork, Singapore:", "dandytan@gmail.com", "98765432");
+
+
+
+
+            Console.WriteLine("Welcome to HungryEatNow!");
+            Console.WriteLine("Please Choose your role ");
+            Console.WriteLine("1. Customer");
+            Console.WriteLine("2. Employee");
+            Console.Write("Enter the Number of your Role :");
+            var role = Console.ReadLine();
+
+
+
+            // Customer Role 
+            if (role == "1")
             {
-                Console.WriteLine("----------------------------------------------");
-                Console.WriteLine("Welcome Customer! What would you like to do?");
-                Console.WriteLine("1. Create New Order ");
-                Console.WriteLine("2. View Current/Past Orders");
-                Console.ReadLine();
+                while (true)
+                {
+                    Console.WriteLine("----------------------------------------------");
+                    Console.Write("Welcome Customer! Please Enter Your Name (with First Letter as Capital): ");
+                    var custname = Console.ReadLine();
+                    if (custname == "John" || custname == "Mary" || custname == "Dandy")
+                    {
+                        Console.WriteLine("Welcome " + custname + "! What would you like to do?");
+                        Console.WriteLine("1. Create New Order ");
+                        Console.WriteLine("2. View Current/Past Orders");
+                        var customeroption = Console.ReadLine();
+
+                        if(customeroption == "1")
+                        {
+
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Sorry You are not a Member!");
+                        
+                    }
+                }
             }
 
 
