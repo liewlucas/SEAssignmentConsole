@@ -6,6 +6,6 @@ namespace SEAssignmentConsole
 {
     interface OrderSubject
     {
-        public notifyCustomer();
+       // public notifyCustomer();
     }
 }

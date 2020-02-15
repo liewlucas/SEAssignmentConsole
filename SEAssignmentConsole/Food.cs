@@ -11,9 +11,9 @@ namespace SEAssignmentConsole
         private string FoodDescription;
         private double FoodPrice;
         private int Quantity;
-        private Boolean FoodStatus;
+        private string FoodStatus;
 
-        public Food(int fid, string fdname, string fddesc, double fdprice, int qty, bool fdstatus)
+        public Food(int fid, string fdname, string fddesc, double fdprice, int qty, string fdstatus)
         {
             this.FoodID = fid;
             this.FoodName = fdname;

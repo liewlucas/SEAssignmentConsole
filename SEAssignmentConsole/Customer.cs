@@ -16,4 +16,7 @@ public class Customer
         this.EmailAddress = email;
         this.contactNo = contact;
 	}
+
+
+
 }
