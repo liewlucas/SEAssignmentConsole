@@ -7,7 +7,17 @@ namespace SEAssignmentConsole
     class Payment
     {
         private float amount;
+        public float Amount   // property
+        {
+            get { return amount; }
+            set { amount = value; }
+        }
         private string type;
+        public string Type   // property
+        {
+            get { return type; }
+            set { type = value; }
+        }
 
 
         public Payment(float amt, string type)

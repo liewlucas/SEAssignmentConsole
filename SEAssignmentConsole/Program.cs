@@ -24,8 +24,10 @@ namespace SEAssignmentConsole
             Customer John = new Customer(1, "John", "NewYork, Singapore:", "johntan@gmail.com", "98765432");
             Customer Mary = new Customer(1, "Mary", "NewYork, Singapore:", "marytan@gmail.com", "98765432");
             Customer Dandy = new Customer(1, "Dandy", "NewYork, Singapore:", "dandytan@gmail.com", "98765432");
-
-
+            CreditCard creditcard1 = new CreditCard("1234567891234567");
+            CreditCard creditcard2 = new CreditCard("9874563219874563");
+            BankAccount bankacc1 = new BankAccount("123456");
+            BankAccount bankacc2 = new BankAccount("654321");
 
 
             Console.WriteLine("Welcome to HungryEatNow!");
@@ -45,15 +47,154 @@ namespace SEAssignmentConsole
                     Console.WriteLine("----------------------------------------------");
                     Console.Write("Welcome Customer! Please Enter Your Name (with First Letter as Capital): ");
                     var custname = Console.ReadLine();
-                    if (custname == "John" || custname == "Mary" || custname == "Dandy")
+                    if (custname == John.name|| custname == Mary.name || custname == Dandy.name)
                     {
+                        Console.WriteLine("----------------------------------------------");
                         Console.WriteLine("Welcome " + custname + "! What would you like to do?");
                         Console.WriteLine("1. Create New Order ");
                         Console.WriteLine("2. View Current/Past Orders");
+                        Console.Write("Enter your option: ");
                         var customeroption = Console.ReadLine();
 
                         if(customeroption == "1")
                         {
+                            Console.WriteLine("----------------------------------------------");
+                            Console.WriteLine("Outlets");
+                            Console.WriteLine("---------");
+                            Console.WriteLine("Changi");
+                            Console.WriteLine("Clementi");
+                            Console.WriteLine("Jurong");
+                            Console.WriteLine("");
+                            Console.Write("Please enter your outlet of choice :");
+                            var outlet = Console.ReadLine();
+                            while(true)
+                            { 
+                                Console.WriteLine("----------------------------------------------");
+                                Console.WriteLine("Food Categories");
+                                Console.WriteLine("---------");
+                                Console.WriteLine("Mains");
+                                Console.WriteLine("Sides");
+                                Console.WriteLine("");
+                                Console.Write("Please enter your Category of choice :");
+                                var category = Console.ReadLine();
+                                if (category =="Mains")
+                                {
+                                    Console.WriteLine("----------------------------------------------");
+                                    Console.WriteLine("Food Menu");
+                                    Console.WriteLine("---------");
+                                    Console.Write(CheeseBurger.fdname + " ");
+                                    Console.Write("$"+CheeseBurger.fdprice);
+                                    Console.WriteLine("");
+                                    Console.Write (Pasta.fdname +" ");
+                                    Console.Write("$" + Pasta.fdprice);
+                                    Console.WriteLine("");
+                                    Console.Write("Please enter your Food of choice :");
+                                    var food = Console.ReadLine();
+                                    Console.Write("Quantity : ");
+                                    var qty = Console.ReadLine();
+                                    Console.Write("Would your like to order more? yes/no : ");
+                                    var ordermore = Console.ReadLine();
+                                    if (ordermore == "no")
+                                    { break; }
+
+                                }
+
+                                else if (category == "Sides")
+                                {
+                                    Console.WriteLine("----------------------------------------------");
+                                    Console.WriteLine("Food Menu");
+                                    Console.WriteLine("---------");
+                                    Console.Write(Nuggets.fdname + " ");
+                                    Console.Write(Nuggets.fdprice);
+                                    Console.WriteLine("");
+                                    Console.Write("Please enter your Food of choice :");
+                                    var food = Console.ReadLine();
+                                    Console.Write("Quantity : ");
+                                    var qty = Console.ReadLine();
+                                    Console.Write("Would your like to order more? yes/no : ");
+                                    var ordermore = Console.ReadLine();
+                                    if (ordermore == "no")
+                                    { break; }
+
+                                }
+                            }
+
+                            Console.WriteLine("----------------------------------------------");
+                            Console.WriteLine("Delivery Options");
+                            Console.WriteLine("---------");
+                            Console.WriteLine("Standard (+ $0)");
+                            Console.WriteLine("Express (+ $6)");
+                            Console.Write("Please enter your Delivery of choice :");
+                            var deloption = Console.ReadLine();
+
+                            Console.WriteLine("----------------------------------------------");
+                            if (deloption == "Standard")
+                            {
+                                Console.WriteLine("You will receive your order in 3 hours");
+                            }
+                            else
+                            {
+                                Console.WriteLine("You will receive your order in 15 minutes");
+                            }
+
+                            while (true)
+                            {
+                                Console.WriteLine("----------------------------------------------");
+                                Console.WriteLine("Payment Options");
+                                Console.WriteLine("---------");
+                                Console.WriteLine("1.Credit Card");
+                                Console.WriteLine("2.Bank Transfer");
+                                Console.Write("Please enter your Payment of choice :");
+                                var pymtoption = Console.ReadLine();
+                                if (pymtoption == "1")
+                                {
+                                    Console.Write("Please Enter your Credit Card Number");
+                                    var ccnum = Console.ReadLine();
+                                    if (ccnum == creditcard1.cardnumber)
+                                    {
+                                        Console.WriteLine("----------------------------------------------");
+                                        Console.WriteLine("Payment Successful");
+                                        break;
+                                    }
+                                    else if (ccnum == creditcard2.cardnumber)
+                                    {
+                                        Console.WriteLine("----------------------------------------------");
+                                        Console.WriteLine("Payment Failed");
+                                    }
+                                }
+                                if (pymtoption == "2")
+                                {
+                                    Console.Write("Please Enter your Bank Account Number");
+                                    var banknum = Console.ReadLine();
+                                    if (banknum == bankacc1.accountnumber)
+                                    {
+                                        Console.WriteLine("----------------------------------------------");
+                                        Console.WriteLine("Payment Successful");
+                                        break;
+                                    }
+                                    else if (banknum == bankacc2.accountnumber)
+                                    {
+                                        Console.WriteLine("----------------------------------------------");
+                                        Console.WriteLine("Payment Failed");
+                                    }
+
+                                }
+                            }
+
+                            
+                          
+
+                            
+
+                           // Order NewOrder = new Order(1,"")
+
+
+
+
+
+
+
+
 
                         }
                     }
