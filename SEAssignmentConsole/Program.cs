@@ -44,7 +44,7 @@ namespace SEAssignmentConsole
                 {
                     Console.WriteLine("----------------------------------------------");
                     Console.Write("Welcome Customer! Please Enter Your Name (with First Letter as Capital): ");
-                    var custname = Console.ReadLine();
+                    string custname = Console.ReadLine();
                     if (custname == "John" || custname == "Mary" || custname == "Dandy")
                     {
                         Console.WriteLine("Welcome " + custname + "! What would you like to do?");
@@ -55,6 +55,15 @@ namespace SEAssignmentConsole
                         if(customeroption == "1")
                         {
 
+                        }
+
+                        else if(customeroption == "2")
+                        {
+                            
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invalid input pls try again");
                         }
                     }
                     else

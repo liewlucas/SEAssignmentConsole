@@ -27,5 +27,7 @@ namespace SEAssignmentConsole
             this.DeliveryCharge = delcharge;
             this.TotalAmount = totalamt;
         }
+
+  
     }
 }
