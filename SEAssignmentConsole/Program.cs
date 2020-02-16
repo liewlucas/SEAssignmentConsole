@@ -295,7 +295,7 @@ namespace SEAssignmentConsole
             while(true)
             {
                 string Options = "Chef is selected!";
-                foreach (Order order in global.order) //needs to add the order list cs
+                foreach (Order order in Order.OrderList) 
                 {
                     if(order.ordstatus == "New")
                     {
@@ -305,7 +305,7 @@ namespace SEAssignmentConsole
                 Options += "Select order to prepare: ";
                 Console.Write(Options);
                 string ordernum = Console.ReadLine();
-                c.selectOrder(.OrderList[int.Parse(ordernum) - 1]); //needs to add the order list cs
+                c.selectOrder(Order.OrderList[int.Parse(ordernum) - 1]); 
                 Console.Write("Select another order?");
                 string choose = Console.ReadLine();
                 if (choose.ToUpper() == "NO")

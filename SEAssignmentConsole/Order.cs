@@ -72,7 +72,7 @@ namespace SEAssignmentConsole
             get { return OrderNumber; }
             set { OrderNumber = value; }
         }
-        public List<Food> items { get; set; }  
+        public static List<Order> OrderList = new List<Order>(); 
 
     }
 }

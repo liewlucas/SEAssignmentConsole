@@ -6,8 +6,8 @@ namespace SEAssignmentConsole
 {
     class Chef : Employee
     {
-        
-        public Chef(int id, string name, string nric, string gender, string Contactno, DateTime datejoin, string status) : base(Id, Name, NRIC, Gender, ContactNo, DateJoin, Status)
+
+        public Chef(int id, string name, string nric, string gender, string Contactno, DateTime datejoin, string status) : base(id,name,nric,gender,Contactno,datejoin,status)
         { }
 
         public void selectOrder(Order order)
