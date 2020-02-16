@@ -8,8 +8,18 @@ namespace SEAssignmentConsole
     {
         private int FoodID;
         private string FoodName;
+        public string fdname   // property
+        {
+            get { return FoodName; }
+            set { FoodName = value; }
+        }
         private string FoodDescription;
         private double FoodPrice;
+        public double fdprice   // property
+        {
+            get { return FoodPrice; }
+            set { FoodPrice = value; }
+        }
         private int Quantity;
         private string FoodStatus;
 

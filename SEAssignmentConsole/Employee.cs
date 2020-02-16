@@ -6,13 +6,13 @@ namespace SEAssignmentConsole
 {
     class Employee
     {
-        private int EmployeeId;
-        private string Employeename;
-        private string nric;
-        private string gender;
-        private string contactNo;
-        private DateTime DateJoin;
-        private string Status;
+        private int EmployeeId { get; set; }
+        private string Employeename { get; set; }
+        private string nric { get; set; }
+        private string gender { get; set; }
+        private string contactNo { get; set; }
+        private DateTime DateJoin { get; set; }
+        private string Status {get; set;}
 
         public Employee(int id, string name, string nric, string gender, string Contactno, DateTime datejoin, string status)
         {
