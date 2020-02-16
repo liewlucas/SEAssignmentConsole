@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SEAssignmentConsole
 {
-    class Order
+    class Order : OrderSubject
     {
         private int OrderNumber;
         private string OrderInfo;
@@ -15,6 +15,7 @@ namespace SEAssignmentConsole
         private string OrderDelivery;
         private double DeliveryCharge;
         private double TotalAmount;
+        private List<CustomerObserver> observers;
 
         public Order(int ordnum, string ordinfo, string ordstatus, DateTime ordcreated, List<Food> items, string ordrdy, string orddel, double delcharge, double totalamt)
         {
@@ -22,12 +23,39 @@ namespace SEAssignmentConsole
             this.OrderInfo = ordinfo;
             this.OrderStatus = ordstatus;
             this.OrderCreated = ordcreated;
-            this.OrderItems = items;
+            this.OrderItems = items;    
             this.OrderReady = ordrdy; 
             this.DeliveryCharge = delcharge;
             this.TotalAmount = totalamt;
         }
 
-  
+        public Order()
+        {
+            List<CustomerObserver> observers = new List<CustomerObserver>();
+        }
+
+        public void notifyCustomer()
+        {
+            
+            foreach(CustomerObserver o in observers)
+            {
+                o.update(OrderStatus);
+            }
+        }
+
+        public void registerObserver(CustomerObserver o)
+        {
+            observers.Add(o);
+        }
+
+        public void removeObserver(CustomerObserver o)
+        {
+            observers.Remove(o);
+        }
+
+        public void statusChanged()
+        {
+            notifyCustomer();
+        }
     }
 }
