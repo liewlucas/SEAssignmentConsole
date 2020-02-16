@@ -19,6 +19,13 @@ namespace SEAssignmentConsole
                 CheeseBurger,Pasta,Nuggets
             };
 
+            int RandomNumber(int min, int max)
+            {
+                Random random = new Random();
+                return random.Next(1000, 2000);
+            }
+
+
             Menu FoodMenu = new Menu(1, 3, Foodlist);
 
             Customer John = new Customer(1, "John", "NewYork, Singapore:", "johntan@gmail.com", "98765432");
@@ -189,15 +196,22 @@ namespace SEAssignmentConsole
                                         Console.WriteLine("Payment Successful");
                                         total += deliverycharge;
 
-                                        Order NewOrder = new Order(1, "Outlet: " + outlet + "Delivery Type: " + deloption, "submitted", DateTime.Now, orderlist, "", "", deliverycharge, total);
-
+                                        Order NewOrder = new Order();/*1, "Outlet: " + outlet + "Delivery Type: " + deloption, "submitted", DateTime.Now, orderlist, "", "", deliverycharge, total*/
+                                        int amtOfOrders = orders.Count + 1;
                                         Console.WriteLine("----------------------------------------------");
                                         Console.WriteLine("Your Order Details");
+                                        Console.WriteLine("Order Number:" + amtOfOrders);
                                         Console.WriteLine("Outlet: " + outlet);
                                         Console.WriteLine("Items: " + food);
                                         Console.WriteLine("Quantity: " + qty);
                                         Console.WriteLine("Delivery Charge: $" + deliverycharge);
                                         Console.WriteLine("Total Amount: $" + total);
+                                        foreach(var items in food)
+                                        NewOrder.Orderinfo = outlet;
+                                        NewOrder.Ordernumber = amtOfOrders;
+                                        NewOrder.Deliverycharge = deliverycharge;
+                                        NewOrder.totalamt = total;
+                                        NewOrder.ToString();
                                         orders.Add(NewOrder);
                                         Console.ReadLine();
                                         break;
@@ -218,8 +232,8 @@ namespace SEAssignmentConsole
                                         Console.WriteLine("Payment Successful");
                                         total += deliverycharge;
 
-                                        Order NewOrder = new Order(1, "Outlet: " + outlet + "Delivery Type: " + deloption, "submitted", DateTime.Now, orderlist, "", "", deliverycharge, total);
-
+                                        Order NewOrder = new Order();/*1, "Outlet: " + outlet + "Delivery Type: " + deloption, "submitted", DateTime.Now, orderlist, "", "", deliverycharge, total*/
+                                        int amtOfOrders = orders.Count + 1;
                                         Console.WriteLine("----------------------------------------------");
                                         Console.WriteLine("Your Order Details");
                                         Console.WriteLine("Outlet: " + outlet);
@@ -227,6 +241,12 @@ namespace SEAssignmentConsole
                                         Console.WriteLine("Quantity: " + qty);
                                         Console.WriteLine("Delivery Charge: $" + deliverycharge);
                                         Console.WriteLine("Total Amount: " + total);
+                                        foreach (var items in food)
+                                        NewOrder.Orderinfo = outlet;
+                                        NewOrder.Ordernumber = amtOfOrders;
+                                        NewOrder.Deliverycharge = deliverycharge;
+                                        NewOrder.totalamt = total;
+                                        NewOrder.ToString();
                                         orders.Add(NewOrder);
                                         Console.ReadLine();
                                         break;
@@ -258,17 +278,19 @@ namespace SEAssignmentConsole
 
                         else if(customeroption == "2")
                         {
-                            foreach(var items in orders)
+                            foreach (var items in orders)
                             {
                                 Console.WriteLine(items);
+                                Console.WriteLine("----------------------");
+                             
                             }
-                           
+                            //Console.WriteLine(orders);
                             Console.ReadLine();
                             break;
                         }
                         else
                         {
-                            Console.WriteLine("Invalid input pls try again");
+                            Console.WriteLine("Invalid input please try again");
                         }
                     }
                     else
