@@ -10,13 +10,13 @@ namespace SEAssignmentConsole
         private string OrderInfo;
         private string OrderStatus;
         private DateTime OrderCreated;
-        private Food OrderItems;
-        private DateTime OrderReady;
-        private DateTime OrderDelivery;
+        private List<Food> OrderItems;
+        private string OrderReady;
+        private string OrderDelivery;
         private double DeliveryCharge;
         private double TotalAmount;
 
-        public Order(int ordnum, string ordinfo, string ordstatus, DateTime ordcreated, Food items, DateTime ordrdy, DateTime orddel, double delcharge, double totalamt)
+        public Order(int ordnum, string ordinfo, string ordstatus, DateTime ordcreated, List<Food> items, string ordrdy, string orddel, double delcharge, double totalamt)
         {
             this.OrderNumber = ordnum;
             this.OrderInfo = ordinfo;

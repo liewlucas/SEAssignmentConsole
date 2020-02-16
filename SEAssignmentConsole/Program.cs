@@ -37,7 +37,11 @@ namespace SEAssignmentConsole
             Console.Write("Enter the Number of your Role :");
             var role = Console.ReadLine();
 
-
+            double deliverycharge = 0.00;
+            List<Food> orderlist = new List<Food>();
+            double total = 0.00;
+            var qty = "";
+            var food = "";
 
             // Customer Role 
             if (role == "1")
@@ -89,13 +93,32 @@ namespace SEAssignmentConsole
                                     Console.Write("$" + Pasta.fdprice);
                                     Console.WriteLine("");
                                     Console.Write("Please enter your Food of choice :");
-                                    var food = Console.ReadLine();
+                                    food = Console.ReadLine();
+
                                     Console.Write("Quantity : ");
-                                    var qty = Console.ReadLine();
+                                    qty = Console.ReadLine();
+                                    var foodqty = Int16.Parse(qty);
+                                    if (food == CheeseBurger.fdname)
+                                    {
+                                        orderlist.Add(CheeseBurger);
+
+                                    }
+
+                                    if (food == Pasta.fdname)
+                                    {
+                                        orderlist.Add(Pasta);
+                                    }
+
+
                                     Console.Write("Would your like to order more? yes/no : ");
                                     var ordermore = Console.ReadLine();
+
+                                    total = orderlist[0].fdprice * foodqty;
                                     if (ordermore == "no")
                                     { break; }
+                                    if (ordermore == "yes")
+                                    { Console.WriteLine("Sorry, we do not support more than one type of product at a time!"); break; }
+
 
                                 }
 
@@ -108,13 +131,18 @@ namespace SEAssignmentConsole
                                     Console.Write(Nuggets.fdprice);
                                     Console.WriteLine("");
                                     Console.Write("Please enter your Food of choice :");
-                                    var food = Console.ReadLine();
+                                    food = Console.ReadLine();
                                     Console.Write("Quantity : ");
-                                    var qty = Console.ReadLine();
+                                    qty = Console.ReadLine();
+                                    var foodqty = Int16.Parse(qty);
+                                    orderlist.Add(Nuggets);
                                     Console.Write("Would your like to order more? yes/no : ");
                                     var ordermore = Console.ReadLine();
+                                    total = orderlist[0].fdprice * foodqty;
                                     if (ordermore == "no")
                                     { break; }
+                                    if(ordermore == "yes")
+                                    { Console.WriteLine("Sorry, we do not support more than one type of product at a time!"); break; }
 
                                 }
                             }
@@ -131,11 +159,15 @@ namespace SEAssignmentConsole
                             if (deloption == "Standard")
                             {
                                 Console.WriteLine("You will receive your order in 3 hours");
+                                deliverycharge = 0.00;
                             }
                             else
                             {
                                 Console.WriteLine("You will receive your order in 15 minutes");
+                                deliverycharge = 6.00;
                             }
+
+                            
 
                             while (true)
                             {
@@ -148,28 +180,52 @@ namespace SEAssignmentConsole
                                 var pymtoption = Console.ReadLine();
                                 if (pymtoption == "1")
                                 {
-                                    Console.Write("Please Enter your Credit Card Number");
+                                    Console.Write("Please Enter your Credit Card Number:");
                                     var ccnum = Console.ReadLine();
                                     if (ccnum == creditcard1.cardnumber)
                                     {
                                         Console.WriteLine("----------------------------------------------");
                                         Console.WriteLine("Payment Successful");
+                                        total += deliverycharge;
+
+                                        Order NewOrder = new Order(1, "Outlet: " + outlet + "Delivery Type: " + deloption, "submitted", DateTime.Now, orderlist, "", "", deliverycharge, total);
+
+                                        Console.WriteLine("----------------------------------------------");
+                                        Console.WriteLine("Your Order Details");
+                                        Console.WriteLine("Outlet: " + outlet);
+                                        Console.WriteLine("Items: " + food);
+                                        Console.WriteLine("Quantity: " + qty);
+                                        Console.WriteLine("Delivery Charge: $" + deliverycharge);
+                                        Console.WriteLine("Total Amount: $" + total);
+                                        Console.ReadLine();
                                         break;
                                     }
                                     else if (ccnum == creditcard2.cardnumber)
                                     {
-                                        Console.WriteLine("----------------------------------------------");
+                                         Console.WriteLine("----------------------------------------------");
                                         Console.WriteLine("Payment Failed");
                                     }
                                 }
                                 if (pymtoption == "2")
                                 {
-                                    Console.Write("Please Enter your Bank Account Number");
+                                    Console.Write("Please Enter your Bank Account Number:");
                                     var banknum = Console.ReadLine();
                                     if (banknum == bankacc1.accountnumber)
                                     {
                                         Console.WriteLine("----------------------------------------------");
                                         Console.WriteLine("Payment Successful");
+                                        total += deliverycharge;
+
+                                        Order NewOrder = new Order(1, "Outlet: " + outlet + "Delivery Type: " + deloption, "submitted", DateTime.Now, orderlist, "", "", deliverycharge, total);
+
+                                        Console.WriteLine("----------------------------------------------");
+                                        Console.WriteLine("Your Order Details");
+                                        Console.WriteLine("Outlet: " + outlet);
+                                        Console.WriteLine("Items: " + food);
+                                        Console.WriteLine("Quantity: " + qty);
+                                        Console.WriteLine("Delivery Charge: $" + deliverycharge);
+                                        Console.WriteLine("Total Amount: " + total);
+                                        Console.ReadLine();
                                         break;
                                     }
                                     else if (banknum == bankacc2.accountnumber)
@@ -178,15 +234,14 @@ namespace SEAssignmentConsole
                                         Console.WriteLine("Payment Failed");
                                     }
 
+                                   
+
                                 }
+                                break;
+                                
                             }
 
-                            
-                          
-
-                            
-
-                           // Order NewOrder = new Order(1,"")
+                  
 
 
 
