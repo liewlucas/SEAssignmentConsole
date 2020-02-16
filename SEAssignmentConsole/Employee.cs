@@ -13,6 +13,7 @@ namespace SEAssignmentConsole
         private string ContactNo { get; set; }
         private DateTime DateJoin { get; set; }
         private string Status {get; set;}
+        public string task;
 
         public Employee(int id, string name, string nric, string gender, string contactno, DateTime datejoin, string status)
         {

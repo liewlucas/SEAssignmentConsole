@@ -3,24 +3,25 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace SEAssignmentConsole
-{/*
+{
     class Chef : Employee
     {
-        /*
-        public Chef(string Name, int ID, string Gender, string ContactNo, DateTime DateJoin, string Status) : base(Name, ID, Gender, ContactNo, DateJoin, Status)
+
+        public Chef(int id, string name, string nric, string gender, string Contactno, DateTime datejoin, string status) : base(id,name,nric,gender,Contactno,datejoin,status)
         { }
 
         public void selectOrder(Order order)
         {
-            order.status = "Preparing";
+            order.ordstatus = "Preparing";
             Console.WriteLine("Press enter when order is ready");
             Console.ReadLine();
-            order.status = "Ready";
-            order.Readytime = DateTime.Now;
+            order.ordstatus = "Ready";
+            //order.ordrdy = DateTime.Now;
+            Console.ReadLine();
             Console.WriteLine("Order is Completed");
             Console.WriteLine("Exit?");
             Console.ReadLine();
         }
 
-    }*/
+    }
 }
