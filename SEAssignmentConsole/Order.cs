@@ -57,5 +57,22 @@ namespace SEAssignmentConsole
         {
             notifyCustomer();
         }
+        public string ordstatus
+        {
+            get { return OrderStatus; }
+            set { OrderStatus = value; }
+        }
+        public string ordrdy
+        {
+            get { return OrderReady; }
+            set { OrderReady = value; }
+        }
+        public int ordnum
+        {
+            get { return OrderNumber; }
+            set { OrderNumber = value; }
+        }
+        public List<Food> items { get; set; }  
+
     }
 }
