@@ -6,6 +6,10 @@ namespace SEAssignmentConsole
 {
     interface OrderSubject
     {
-       // public notifyCustomer();
+        void registerObserver(CustomerObserver o);
+        void removeObserver(CustomerObserver o);
+    
+        void notifyCustomer();
+
     }
 }

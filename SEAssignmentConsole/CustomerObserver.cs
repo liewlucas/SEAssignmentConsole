@@ -6,6 +6,6 @@ namespace SEAssignmentConsole
 {
     interface CustomerObserver
     {
-       // update();
+        void update(string status);
     }
 }

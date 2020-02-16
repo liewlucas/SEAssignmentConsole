@@ -39,6 +39,7 @@ namespace SEAssignmentConsole
 
             double deliverycharge = 0.00;
             List<Food> orderlist = new List<Food>();
+            List<Order> orders = new List<Order>();
             double total = 0.00;
             var qty = "";
             var food = "";
@@ -197,6 +198,7 @@ namespace SEAssignmentConsole
                                         Console.WriteLine("Quantity: " + qty);
                                         Console.WriteLine("Delivery Charge: $" + deliverycharge);
                                         Console.WriteLine("Total Amount: $" + total);
+                                        orders.Add(NewOrder);
                                         Console.ReadLine();
                                         break;
                                     }
@@ -225,6 +227,7 @@ namespace SEAssignmentConsole
                                         Console.WriteLine("Quantity: " + qty);
                                         Console.WriteLine("Delivery Charge: $" + deliverycharge);
                                         Console.WriteLine("Total Amount: " + total);
+                                        orders.Add(NewOrder);
                                         Console.ReadLine();
                                         break;
                                     }
@@ -255,7 +258,13 @@ namespace SEAssignmentConsole
 
                         else if(customeroption == "2")
                         {
-                            
+                            foreach(var items in orders)
+                            {
+                                Console.WriteLine(items);
+                            }
+                           
+                            Console.ReadLine();
+                            break;
                         }
                         else
                         {
@@ -268,6 +277,11 @@ namespace SEAssignmentConsole
                         
                     }
                 }
+            }
+
+            if (role == "2")
+            {
+
             }
 
 
